@@ -1,5 +1,5 @@
 <?php
 
-$cn=mysqli_connect("localhost", "root","","cpu2024");
+$cn=mysqli_connect("localhost", "root","","sisper");
 
 ?>
