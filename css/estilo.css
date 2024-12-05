@@ -1,0 +1,71 @@
+@font-face {
+    font-family:"Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf");
+}
+
+html{
+    height: 100%;
+    font-family: Roboto-Black;
+}
+
+body{
+
+
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+     /* background-image: linear-gradient(to top, #000 0%, #fff 100%);
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+#grupito{
+    width: 30%;
+    margin: auto;
+    background-color: white;
+    border-style: none;
+    box-shadow: black 0px 5px 5px;
+    border-radius: 15px;
+
+}
+
+#txt{
+    width: 80%;
+    height: 40px;
+    background-image: url("../img/sesion.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 50px;
+    font-family: Roboto-Black;
+    font-size: 20px;
+    border-left-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    margin-bottom: 20px;
+
+}
+
+#pwd{
+    width: 80%;
+    height: 40px;
+    background-image: url("../img/pass.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 50px;
+    font-family: Roboto-Black;
+    font-size: 20px;
+    border-left-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    margin-bottom: 20px;
+
+}
+
+#btn{
+    width: 80%;
+    height: 40px;
+    font-family: Roboto-Black;
+    margin-bottom: 20px;
+}
+
+

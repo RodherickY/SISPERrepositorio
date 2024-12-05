@@ -10,7 +10,6 @@
 
 
 <center>
-<img src="img/Logo_UNJFSC.png" width="180" height="180">
 <br>
 <h1>PROCESO DE VALIDACIÓN ELECTRÓNICA PROYECTO EDUCATIVO REGIONAL</h1>
 <br><br>
@@ -19,6 +18,7 @@
 
 <fieldset id="grupito">
     <center>
+            <h3>INICIAR SESIÓN</h3>
             <input type="text" name="txtusuario" id="txt" autocomplete="off" maxlength="8">
             <input type="password" name="txtpass" id="pwd" autocomplete="off" maxlength="8">
             <input type="submit" value="Iniciar Sesion" id="btn">
@@ -27,8 +27,6 @@
 
 
 </fieldset>
-
-
 
 </form>
 
