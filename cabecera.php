@@ -33,7 +33,7 @@ $cod = $_SESSION['usuario'];
                         <div class="dropdown-content">
                             <a href="actualizardatosp.php">ACTUALIZACIÓN DATOS PERSONALES</a>
                             <a href="cambiarfotoperfil.php">CAMBIAR FOTO PERFIL</a>
-                            <a href="cambiarcontraseña.php">CAMBIAR CONTRASEÑA</a>
+                            <a href="cambiarcontrasena.php">CAMBIAR CONTRASEÑA</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -84,7 +84,7 @@ $cod = $_SESSION['usuario'];
                         <div class="dropdown-content">
                             <a href="actualizardatosp.php">ACTUALIZACIÓN DATOS PERSONALES</a>
                             <a href="cambiarfotoperfil.php">CAMBIAR FOTO PERFIL</a>
-                            <a href="cambiarcontraseña.php">CAMBIAR CONTRASEÑA</a>
+                            <a href="cambiarcontrasena.php">CAMBIAR CONTRASEÑA</a>
                         </div>
                     </div>
                     <a href="objetivos.php">OBJETIVOS</a>
