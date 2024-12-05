@@ -5,22 +5,20 @@ include("conexion.php");
 $cod = $_SESSION["usuario"];
 
 $correo = $_POST["txtcorreo"];
-$direccion = $_POST["txtdireccion"];
 $celular = $_POST["txtcelular"];
-$fecha = $_POST["txtfecha"];
+$direccion = $_POST["txtdireccion"];
 $sexo = $_POST["opcsexo"];
 
 $sql = "UPDATE datoespecifico
         SET correo = '$correo',
-            direccion = '$direccion',
             telefono = '$celular',
-            fechanacimiento = '$fecha',
+            direccion = '$direccion',
             sexo = '$sexo',
             estado = 1
-        WHERE codalumno = '$cod'";
+        WHERE codigo = '$cod'";
 
 mysqli_query($cn, $sql);
 
-header('Location: principal.php');
+header('Location: datosprincipales.php');
 
 ?>
