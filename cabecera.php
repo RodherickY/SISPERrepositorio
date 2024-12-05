@@ -24,6 +24,7 @@ $cod = $_SESSION['usuario'];
             <div class="logo-container">
                 <img src="img/gobierno.png" alt="Logo Gobierno Regional de Lima" class="logo">
             </div>
+
             <div class="menu-container">
                 <nav class="menu">
                     <a href="datosprincipales.php">DATOS PRINCIPALES</a>
@@ -73,7 +74,7 @@ $cod = $_SESSION['usuario'];
         <!-- Cabecera para los usuarios -->
         <header class="cabecera">
             <div class="logo-container">
-                <img src="../img/gobierno.png" alt="Logo Gobierno Regional de Lima" class="logo">
+                <img src="img/gobierno.png" alt="Logo Gobierno Regional de Lima" class="logo">
             </div>
             <div class="menu-container">
                 <nav class="menu">

@@ -24,9 +24,9 @@ if ($valor==null) {
     $_SESSION["usuario"] = $valor;
     $_SESSION["auth"] = 1;
     if($valor== "admin001"){
-        header('location:principalAdmin.php');
+        header('location:datosprincipales.php');
     }else{
-        header('location:principal.php');
+        header('location:datosprincipales.php');
     }
     }
 
