@@ -6,8 +6,6 @@ include("conexion.php");
 $usu=$_POST["txtusuario"];
 $pass=$_POST["txtpass"];
 
-
-
 $sql="select * from usuario where codigo='$usu' and password='$pass'";
 
 

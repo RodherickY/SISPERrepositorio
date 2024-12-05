@@ -117,7 +117,7 @@ if ($rTipo['tipo_usuario'] == '1') { // Institución
 // Verificar si los datos específicos están completos
 if ($r["estado"] == 0) { ?>
     <center>
-        <h1 style="color:white;">ACTUALICE SUS DATOS ESPECÍFICOS</h1>
+        <h1 style="color:black;">ACTUALICE SUS DATOS ESPECÍFICOS</h1>
     </center>
 <?php } else { ?>
     <table align="center" border="1" cellspacing="0" bgcolor="white" width="600">
