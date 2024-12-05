@@ -87,7 +87,17 @@ $cod = $_SESSION['usuario'];
                             <a href="cambiarcontrasena.php">CAMBIAR CONTRASEÑA</a>
                         </div>
                     </div>
-                    <a href="objetivos.php">OBJETIVOS</a>
+                    <div class="dropdown">
+                        <a class="dropbtn">OBJETIVOS ▼</a>
+                        <div class="dropdown-content">
+                            <a href="objetivo1.php">OBJETIVO 1</a>
+                            <a href="objetivo2.php">OBJETIVO 2</a>
+                            <a href="objetivo3.php">OBJETIVO 3</a>
+                            <a href="objetivo4.php">OBJETIVO 4</a>
+                            <a href="objetivo5.php">OBJETIVO 5</a>
+                            <a href="objetivo6.php">OBJETIVO 6</a>
+                        </div>
+                    </div>
                     <a href="missugerencias.php">MIS SUGERENCIAS</a>
                     <a href="cerrarsesion.php">CERRAR SESIÓN</a>
                 </nav>
