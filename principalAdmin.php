@@ -1,8 +1,8 @@
 <?php
 
-session_start();
+//include("./auth.php");
 include("conexion.php");
-//include("cabecera.php");
+include("cabecera.php");
 
 $cod=$_SESSION["usuario"];
 $sql = "SELECT p.*, d.* 
