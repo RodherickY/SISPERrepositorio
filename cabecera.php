@@ -12,6 +12,7 @@ $cod = $_SESSION['usuario'];
     <title>Document</title>
 
     <link rel="stylesheet" href="menu_assets/estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/estilo2.css"> <!-- Estilo para las cabeceras -->
 </head>
 

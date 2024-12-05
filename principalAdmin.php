@@ -35,9 +35,9 @@ $r=mysqli_fetch_assoc($f);
 
 <table border="1" cellspacing="0" align="center" bgcolor="white" width="600">
     <tr>
-        <!-- <td rowspan="6" align="center" valign="middle" >
-            <img src="imgalumnos/<?php echo $r["codalumno"]?>.png" width="200" height="200">
-        </td> -->
+        <td rowspan="6" align="center" valign="middle" >
+            <img src="imgusuario/<?php echo $r["codigo"]?>.png" width="200" height="200">
+        </td>
         <td align="right">CODIGO</td>
         <td><?php echo $r["codigo"];  ?></td>
     </tr>
@@ -96,8 +96,6 @@ if ($r["estado"]==0) {
         <td><?php echo $r["sexo"] ?></td>
     </tr>
 </table>
-
-
 
 
 

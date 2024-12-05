@@ -29,7 +29,5 @@ if ($valor==null) {
         header('location:principal.php');
     }
     }
-   
-   
 
 ?>
