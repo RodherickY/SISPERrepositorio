@@ -1,0 +1,163 @@
+
+
+center {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table td:first-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table img {
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff6347;
+}
+
+#boton {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+    width: 300px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.3);
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+select {
+    width: 300px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #4caf50;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.3);
+}
+
+select option {
+    padding: 10px;
+}
+
+/* Estilo para el icono de la flecha */
+select::-ms-expand {
+    display: none; /* Elimina la flecha en IE */
+}
+
+/* Estilo para la flecha personalizada */
+select::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #555;
+    pointer-events: none;
+}
+.pagination {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.pagination a {
+    color: #007BFF; /* Color del enlace */
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 0 5px; /* Espaciado entre botones */
+    text-decoration: none; /* Quita el subrayado */
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Efecto suave */
+}
+
+.pagination a:hover {
+    background-color: #007BFF; /* Fondo al pasar el mouse */
+    color: white; /* Texto blanco */
+}
+
+.pagination a.active {
+    font-weight: bold;
+    background-color: #007BFF; /* Fondo de la página actual */
+    color: white; /* Texto blanco */
+    border: 1px solid #007BFF; /* Borde del mismo color */
+    pointer-events: none; /* Desactiva el clic */
+}

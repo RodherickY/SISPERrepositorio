@@ -1,0 +1,89 @@
+/* Contenedor principal del menú */
+#cssmenu {
+    background: linear-gradient(135deg, #3e698c, #30576e);
+    border-radius: 5px;
+    width: 100%; /* Se adapta al contenedor */
+    max-width: 800px; /* Ancho máximo para mantenerlo compacto */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+/* Lista principal */
+#cssmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Distribuye horizontalmente los elementos */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Elementos principales */
+#cssmenu ul li {
+    position: relative; /* Necesario para el submenú */
+}
+
+/* Enlaces principales */
+#cssmenu ul li a {
+    display: block;
+    padding: 8px 15px; /* Más pequeño */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Fuente más pequeña */
+    text-transform: uppercase;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+#cssmenu ul li a:hover {
+    background: #436f93;
+}
+
+/* Contenedor del submenú */
+#cssmenu ul li.has-sub ul {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    top: 100%; /* Colocado debajo del elemento principal */
+    left: 0;
+    background: #ffffff; /* Fondo blanco para el submenú */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    padding: 5px 0;
+    z-index: 1000;
+    width: 200px; /* Ancho fijo */
+}
+
+/* Opciones individuales del submenú */
+#cssmenu ul li.has-sub ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del submenú */
+#cssmenu ul li.has-sub ul li a {
+    display: block;
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #333; /* Texto oscuro */
+    text-decoration: none;
+    text-align: left; /* Texto alineado a la izquierda */
+    transition: background 0.3s ease, color 0.3s ease; /* Transición suave */
+    border-radius: 3px; /* Bordes redondeados para enlaces */
+}
+
+/* Hover en enlaces del submenú */
+#cssmenu ul li.has-sub ul li a:hover {
+    background: #f5f5f5; /* Fondo claro */
+    color: #0056b3; /* Texto azul */
+}
+
+/* Mostrar submenú al pasar el ratón */
+#cssmenu ul li.has-sub:hover ul {
+    display: block;
+}

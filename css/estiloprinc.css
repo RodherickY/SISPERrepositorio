@@ -1,0 +1,90 @@
+
+
+/* Estilo principal */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+center {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Tabla principal */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table td[colspan] {
+    background-color: #dcecff;
+    font-weight: bold;
+}
+
+table tr:first-child td {
+    border-top: none;
+}
+
+table tr td:first-child {
+    font-weight: bold;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+table img {
+    border-radius: 50%;
+    border: 2px solid #dcecff;
+}
+
+/* Mensaje de estado */
+h2 {
+    font-size: 18px;
+    color: #d9534f;
+    text-align: center;
+}
+
+/* Estilo adicional */
+td[colspan="3"] {
+    background-color: #f0f8ff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+
+    td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    center {
+        font-size: 18px;
+    }
+}
