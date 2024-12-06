@@ -1,6 +1,9 @@
 <?php
 //include("cabecera.php");
 include("conexion.php");
+include("./auth.php");
+
+$cod = $_SESSION["usuario"];
 
 // Verificar que los parámetros tipo e id sean proporcionados
 if (!isset($_GET['tipo']) || !isset($_GET['id'])) {
@@ -108,12 +111,14 @@ mysqli_close($cn);
         <p><strong>Contenido:</strong> <?php echo $descripcionActual; ?></p>
         
         <label for="comentario">Escriba su sugerencia:</label>
-        <form action="guardar_sugerencia.php" method="POST">
+
+        <form action="p_guardarsugerencia.php" method="POST">
             <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
             
             <!-- Enviar el tipo e ID como campos ocultos -->
             <input type="hidden" name="tipo" value="<?php echo $tipo; ?>">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="codigo" value="<?php echo $cod; ?>">
 
             <div>
                 <button type="submit" class="btn-accept">Aceptar</button>

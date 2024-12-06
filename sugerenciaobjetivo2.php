@@ -108,7 +108,7 @@ mysqli_close($cn);
         <p><strong>Contenido:</strong> <?php echo $descripcionActual; ?></p>
         
         <label for="comentario">Escriba su sugerencia:</label>
-        <form action="guardar_sugerencia.php" method="POST">
+        <form action="p_guardarsugerencia.php" method="POST">
             <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
             
             <!-- Enviar el tipo e ID como campos ocultos -->

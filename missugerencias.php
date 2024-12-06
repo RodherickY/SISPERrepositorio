@@ -22,6 +22,7 @@ $query = mysqli_query($cn, $sql);
             <tr>
                 <th>APORTE</th>
                 <th>INDICADOR</th>
+                <th>ITEM</th>
                 <th>FECHA Y HORA</th>
                 <th>ACCIONES</th>
 
@@ -30,6 +31,7 @@ $query = mysqli_query($cn, $sql);
                 <tr>
                     <td><?php echo $row['descripcion']; ?></td>
                     <td><?php echo $row['tipo']; ?></td>
+                    <td><?php echo $row['item']; ?></td>
                     <td><?php echo $row['fecha']; ?></td>
                     
                     
