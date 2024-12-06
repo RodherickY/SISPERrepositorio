@@ -13,19 +13,19 @@
         </div>
         <div class="menu-container">
             <nav class="menu">
-                <a href="datosprincipales.php">DATOS PRINCIPALES</a>
+                <a href="#">DATOS PRINCIPALES</a>
                 <div class="dropdown">
                 <a>ACTUALIZACIÓN DATOS ▼</a>
                     <div class="dropdown-content">
-                        <a href="actualizardatosp.php">ACTUALIZACIÓN DATOS PERSONALES</a>
-                        <a href="cambiarfotoperfil.php">CAMBIAR FOTO PERFIL</a>  
-                        <a href="cambiarcontraseña.php">CAMBIAR CONTRASEÑA</a>                          
+                        <a href="#">ACTUALIZACIÓN DATOS PERSONALES</a>
+                        <a href="#">CAMBIAR FOTO PERFIL</a>  
+                        <a href="#">CAMBIAR CONTRASEÑA</a>                          
                     </div>
                 </div>
                 <!-- <a href="#">CONSOLIDADO</a> -->
-                <a href="objetivos.php">OBJETIVOS</a>
-                <a href="missugerencias.php">MIS SUGERENCIAS</a>
-                <a href="cerrarsesion.php">CERRAR SESIÓN</a>
+                <a href="#">OBJETIVOS</a>
+                <a href="#">MIS SUGERENCIAS</a>
+                <a href="#">CERRAR SESIÓN</a>
             </nav>
         </div>
     </header>

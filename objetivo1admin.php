@@ -14,7 +14,11 @@ if ($resultObjetivo && mysqli_num_rows($resultObjetivo) > 0) {
     die("No se encontró el objetivo con ID: $idObjetivo.");
 }
 
-echo "<h2>Objetivo: $descripcionObjetivo</h2>";
+echo "<h2>Objetivo: $descripcionObjetivo 
+        <a href='editarobjetivo.php?tipo=objetivo&id=$idObjetivo'>
+            <img src='lapiz.png' alt='Editar' width='16'>
+        </a>
+      </h2>";
 
 // Obtener resultados relacionados
 $sqlResultados = "SELECT * FROM resultado WHERE idobjetivo = $idObjetivo";
@@ -75,56 +79,36 @@ if (mysqli_num_rows($resultResultados) > 0) {
 
                 $sqlMedidas = "SELECT * FROM medida WHERE idpolitica = $idPolitica";
                 $resultMedidas = mysqli_query($cn, $sqlMedidas);
-                
-                $primeraFilaPolitica = true;
-                $medidasExisten = mysqli_num_rows($resultMedidas) > 0;
 
-                if ($medidasExisten) {
-                    while ($rowMedida = mysqli_fetch_assoc($resultMedidas)) {
-                        echo "<tr>";
-                        
-                        // Lápiz en la columna de Objetivo
-                        if (!$objetivoImpreso) {
-                            $totalFilas = array_sum($rowspanResultado);
-                            echo "<td rowspan='$totalFilas'>{$descripcionObjetivo} 
-                                    <a href='sugerenciaobjetivo.php?tipo=objetivo&id=$idObjetivo'>
-                                        <img src='lapiz.png' alt='Editar' width='16'>
-                                    </a>
-                                  </td>";
-                            $objetivoImpreso = true;
-                        }
-                        
-                        if ($primeraFilaResultado) {
-                            echo "<td rowspan='{$rowspanResultado[$idResultado]}'>{$descripcionResultado}
-                                  <a href='sugerenciaobjetivo.php?tipo=resultado&id=$idResultado'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
-                            $primeraFilaResultado = false;
-                        }
-                        
-                        if ($primeraFilaPolitica) {
-                            echo "<td rowspan='{$rowspanPolitica[$idPolitica]}'>{$descripcionPolitica}
-                                  <a href='sugerenciaobjetivo.php?tipo=politica&id=$idPolitica'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
-                            $primeraFilaPolitica = false;
-                        }
-                        
-                        echo "<td>{$rowMedida['descripcion']}
-                              <a href='sugerenciaobjetivo.php?tipo=medida&id={$rowMedida['idmedida']}'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
-                        echo "</tr>";
-                    }
-                } else {
+                $primeraFilaPolitica = true;
+
+                while ($rowMedida = mysqli_fetch_assoc($resultMedidas)) {
                     echo "<tr>";
+
                     if (!$objetivoImpreso) {
                         $totalFilas = array_sum($rowspanResultado);
-                        echo "<td rowspan='$totalFilas'>{$descripcionObjetivo}</td>";
+                        echo "<td rowspan='$totalFilas'>{$descripcionObjetivo} 
+                                <a href='editarobjetivo.php?tipo=objetivo&id=$idObjetivo'>
+                                    <img src='lapiz.png' alt='Editar' width='16'>
+                                </a>
+                              </td>";
                         $objetivoImpreso = true;
                     }
+
                     if ($primeraFilaResultado) {
                         echo "<td rowspan='{$rowspanResultado[$idResultado]}'>{$descripcionResultado}
-                                  <a href='sugerenciaobjetivo.php?tipo=resultado&id=$idResultado'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
+                              <a href='editarobjetivo.php?tipo=resultado&id=$idResultado'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
                         $primeraFilaResultado = false;
                     }
-                    echo "<td>{$descripcionPolitica}
-                          <a href='sugerenciaobjetivo.php?tipo=politica&id=$idPolitica'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
-                    echo "<td>[Sin medidas]</td>";
+
+                    if ($primeraFilaPolitica) {
+                        echo "<td rowspan='{$rowspanPolitica[$idPolitica]}'>{$descripcionPolitica}
+                              <a href='editarobjetivo.php?tipo=politica&id=$idPolitica'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
+                        $primeraFilaPolitica = false;
+                    }
+
+                    echo "<td>{$rowMedida['descripcion']}
+                          <a href='editarobjetivo.php?tipo=medida&id={$rowMedida['idmedida']}'><img src='lapiz.png' alt='Editar' width='16'></a></td>";
                     echo "</tr>";
                 }
             }
