@@ -111,9 +111,10 @@ mysqli_close($cn);
         <form action="p_guardarsugerencia.php" method="POST">
             <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
             
-            <!-- Enviar el tipo e ID como campos ocultos -->
+            
             <input type="hidden" name="tipo" value="<?php echo $tipo; ?>">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="codigo" value="<?php echo $cod; ?>">
 
             <div>
                 <button type="submit" class="btn-accept">Aceptar</button>

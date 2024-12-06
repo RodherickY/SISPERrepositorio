@@ -53,31 +53,31 @@ if ($rTipo['tipo_usuario'] == '1') { // Institución
             <td rowspan="7" align="center" valign="middle">
                 <img src="imgusuario/<?php echo $r["codigo"] ?>.png" width="200" height="200">
             </td>
-            <td align="right">Código:</td>
+            <td align="right">Código: </td>
             <td><?php echo $r["codigo"]; ?></td>
         </tr>
         <tr>
-            <td align="right">Nombre:</td>
+            <td align="right">Nombre: </td>
             <td><?php echo $r["nombre"]; ?></td>
         </tr>
         <tr>
-            <td align="right">Provincia:</td>
+            <td align="right">Provincia: </td>
             <td><?php echo $r["provincia"]; ?></td>
         </tr>
         <tr>
-            <td align="right">Director:</td>
+            <td align="right">Director: </td>
             <td><?php echo $r["director"]; ?></td>
         </tr>
         <tr>
-            <td align="right">N. Alumnos:</td>
+            <td align="right">N. Alumnos: </td>
             <td><?php echo $r["nalumnos"]; ?></td>
         </tr>
         <tr>
-            <td align="right">N. Docentes:</td>
+            <td align="right">N. Docentes: </td>
             <td><?php echo $r["ndocentes"]; ?></td>
         </tr>
         <tr>
-            <td align="right">N. Administrativos:</td>
+            <td align="right">N. Administrativos: </td>
             <td><?php echo $r["nadministrativos"]; ?></td>
         </tr>
     <?php } else { // Mostrar datos de persona ?>
@@ -85,11 +85,11 @@ if ($rTipo['tipo_usuario'] == '1') { // Institución
             <td rowspan="6" align="center" valign="middle">
                 <img src="imgusuario/<?php echo $r["codigo"] ?>.png" width="200" height="200">
             </td>
-            <td align="right">Código:</td>
+            <td align="right">Código: </td>
             <td><?php echo $r["codigo"]; ?></td>
         </tr>
         <tr>
-            <td align="right">Ap. Paterno:</td>
+            <td align="right">Ap. Paterno: </td>
             <td><?php echo $r["apaterno"]; ?></td>
         </tr>
         <tr>
@@ -97,16 +97,22 @@ if ($rTipo['tipo_usuario'] == '1') { // Institución
             <td><?php echo $r["amaterno"]; ?></td>
         </tr>
         <tr>
-            <td align="right">Nombres:</td>
+            <td align="right">Nombres: </td>
             <td><?php echo $r["nombre"]; ?></td>
         </tr>
         <tr>
-            <td align="right">Provincia:</td>
+            <td align="right">Provincia: </td>
             <td><?php echo $r["provincia"]; ?></td>
         </tr>
+
+        <?php
+        $fechaNacimiento = new DateTime($r["fnacimiento"]);
+        $hoy = new DateTime();
+        $edad = $hoy->diff($fechaNacimiento)->y;
+        ?>
         <tr>
-            <td align="right">F. Nacimiento:</td>
-            <td><?php echo $r["fnacimiento"]; ?></td>
+            <td align="right">Edad:</td>
+            <td><?php echo $edad; ?> años</td>
         </tr>
     <?php } ?>
 </table>
@@ -122,21 +128,21 @@ if ($r["estado"] == 0) { ?>
 <?php } else { ?>
     <table align="center" border="1" cellspacing="0" bgcolor="white" width="600">
         <tr>
-            <td>CORREO:</td>
+            <td>CORREO: </td>
             <td colspan="2"><?php echo $r["correo"]; ?></td>
         </tr>
         <tr>
-            <td>DIRECCIÓN:</td>
+            <td>DIRECCIÓN: </td>
             <td colspan="2"><?php echo $r["direccion"]; ?></td>
         </tr>
         <tr>
-            <td>CELULAR:</td>
+            <td>CELULAR: </td>
             <td><?php echo $r["telefono"]; ?></td>
         </tr>
 
         <?php if ($rTipo['tipo_usuario'] != '1') {?>
         <tr>
-            <td>SEXO:</td>
+            <td>SEXO: </td>
             <td><?php echo $r["sexo"]; ?></td>
         </tr>
         <?php } ?>
