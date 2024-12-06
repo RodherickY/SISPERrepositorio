@@ -3,7 +3,7 @@ include("auth.php");
 include("conexion.php");
 
 $codusuario = $_SESSION["usuario"];
-$tipo = $_POST["tipo"];
+$tipo = $_POST["tipo"]; 
 $descripcion = $_POST["descripcion"];
 $fecha = date("Y-m-d H:i:s");
 $estado = "Enviado";
