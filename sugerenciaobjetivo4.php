@@ -1,6 +1,9 @@
 <?php
 //include("cabecera.php");
 include("conexion.php");
+include("./auth.php");
+
+$cod = $_SESSION["usuario"];
 
 // Verificar que los parámetros tipo e id sean proporcionados
 if (!isset($_GET['tipo']) || !isset($_GET['id'])) {
