@@ -37,10 +37,10 @@ $query = mysqli_query($cn, $sql);
                     
                     <td style="width: 20%;">
                         <center>
-                            <a href="editar.php?id=<?php echo $row["idsugerencia"] ?>" target="_parent" style="width: 20px; height:20px">
+                            <a href="editarsugerencia.php?id=<?php echo $row["idsugerencia"] ?>" target="_parent" style="width: 20px; height:20px">
                                 <img src="img/editar.png" class="icono" style="width: 20%; height:20%">
                             </a>
-                            <a href="eliminar.php?id=<?php echo $row["idsugerencia"] ?>" target="_parent" style="width: 15px; height:15px">
+                            <a href="p_eliminarsugerencia.php?id=<?php echo $row["idsugerencia"] ?>" target="_parent" style="width: 15px; height:15px">
                                 <img src="img/eliminar.png" class="icono" style="width: 15%; height:15%">
                             </a>
 
