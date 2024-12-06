@@ -16,6 +16,13 @@ if ($resultObjetivo && mysqli_num_rows($resultObjetivo) > 0) {
     die("No se encontró el objetivo con ID: $idObjetivo.");
 }
 
+// Obtener resultados relacionados
+$sqlResultados = "SELECT * FROM resultado WHERE idobjetivo = $idObjetivo";
+$resultResultados = mysqli_query($cn, $sqlResultados);
+
+if (!$resultResultados) {
+    die("Error en la consulta de resultados: " . mysqli_error($cn));
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +30,7 @@ if ($resultObjetivo && mysqli_num_rows($resultObjetivo) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objetivo1</title>
+    <title>Objetivo 5</title>
     <link rel="stylesheet" href="estilo.css"> <!-- Incluye tu CSS personalizado -->
 </head>
 <body>
@@ -33,21 +40,12 @@ if ($resultObjetivo && mysqli_num_rows($resultObjetivo) > 0) {
     </center>
     <br>
     <center>
-        <h4>OBJETIVO N° 05</h4>
+        <h4>OBJETIVO N° 5</h4>
         <h4><?php echo $descripcionObjetivo; ?></h4>
     </center>
     <br>
 
 <?php
-
-// Obtener resultados relacionados
-$sqlResultados = "SELECT * FROM resultado WHERE idobjetivo = $idObjetivo";
-$resultResultados = mysqli_query($cn, $sqlResultados);
-
-if (!$resultResultados) {
-    die("Error en la consulta de resultados: " . mysqli_error($cn));
-}
-
 if (mysqli_num_rows($resultResultados) > 0) {
     echo "<table border='1' cellpadding='5' cellspacing='0' bgcolor='white'>";
     echo "<tr>
@@ -58,12 +56,10 @@ if (mysqli_num_rows($resultResultados) > 0) {
           </tr>";
 
     $objetivoImpreso = false;
-    $resultadoAnterior = null;
     $rowspanResultado = [];
-    $politicaAnterior = null;
     $rowspanPolitica = [];
 
-    // Primer recorrido para calcular rowspans
+    // Calcular rowspans
     while ($rowResultado = mysqli_fetch_assoc($resultResultados)) {
         $idResultado = $rowResultado['idresultado'];
         
@@ -79,7 +75,6 @@ if (mysqli_num_rows($resultResultados) > 0) {
             $totalFilasPorResultado += max(1, $totalMedidas);
             $rowspanPolitica[$idPolitica] = max(1, $totalMedidas);
         }
-        
         $rowspanResultado[$idResultado] = $totalFilasPorResultado;
     }
 
@@ -94,7 +89,7 @@ if (mysqli_num_rows($resultResultados) > 0) {
 
         if (mysqli_num_rows($resultPoliticas) > 0) {
             $primeraFilaResultado = true;
-            
+
             while ($rowPolitica = mysqli_fetch_assoc($resultPoliticas)) {
                 $idPolitica = $rowPolitica['idpolitica'];
                 $descripcionPolitica = $rowPolitica['descripcion'];
@@ -111,24 +106,28 @@ if (mysqli_num_rows($resultResultados) > 0) {
                         
                         if (!$objetivoImpreso) {
                             $totalFilas = array_sum($rowspanResultado);
-                            echo "<td rowspan='$totalFilas'>{$descripcionObjetivo}</td>";
+                            echo "<td rowspan='$totalFilas'>{$descripcionObjetivo} 
+                                    <a href='sugerenciaobjetivo5.php?tipo=objetivo&id=$idObjetivo'>
+                                        <img src='img/lapiz.jpg' alt='Editar' style='width: 16px; height: auto;'>
+                                    </a>
+                                  </td>";
                             $objetivoImpreso = true;
                         }
                         
                         if ($primeraFilaResultado) {
                             echo "<td rowspan='{$rowspanResultado[$idResultado]}'>{$descripcionResultado}
-                                  <a href='editar_resultado.php?id=$idResultado'><img src='img/lapiz.jpg' alt='Editar' width='16'></a></td>";
+                                  <a href='sugerenciaobjetivo5.php?tipo=resultado&id=$idResultado'><img src='img/lapiz.jpg' alt='Editar' style='width: 16px; height: auto;'></a></td>";
                             $primeraFilaResultado = false;
                         }
                         
                         if ($primeraFilaPolitica) {
                             echo "<td rowspan='{$rowspanPolitica[$idPolitica]}'>{$descripcionPolitica}
-                                  <a href='editar_politica.php?id=$idPolitica'><img src='img/lapiz.jpg' alt='Editar' width='16'></a></td>";
+                                  <a href='sugerenciaobjetivo5.php?tipo=politica&id=$idPolitica'><img src='img/lapiz.jpg' alt='Editar' style='width: 16px; height: auto;'></a></td>";
                             $primeraFilaPolitica = false;
                         }
                         
                         echo "<td>{$rowMedida['descripcion']}
-                              <a href='editar_medida.php?id={$rowMedida['idmedida']}'><img src='img/lapiz.jpg' alt='Editar' width='16'></a></td>";
+                              <a href='sugerenciaobjetivo5.php?tipo=medida&id={$rowMedida['idmedida']}'><img src='img/lapiz.jpg' alt='Editar' style='width: 16px; height: auto;'></a></td>";
                         echo "</tr>";
                     }
                 } else {
@@ -140,11 +139,11 @@ if (mysqli_num_rows($resultResultados) > 0) {
                     }
                     if ($primeraFilaResultado) {
                         echo "<td rowspan='{$rowspanResultado[$idResultado]}'>{$descripcionResultado}
-                              <a href='editar_resultado.php?id=$idResultado'><img src='img/lapiz.jpg' alt='Editar' width='16'></a></td>";
+                                  <a href='sugerenciaobjetivo5.php?tipo=resultado&id=$idResultado'><img src='img/lapiz.jpg' alt='Editar' style='width: 16px; height: auto;'></a></td>";
                         $primeraFilaResultado = false;
                     }
                     echo "<td>{$descripcionPolitica}
-                          <a href='editar_politica.php?id=$idPolitica'><img src='img/lapiz.jpg' alt='Editar' width='16'></a></td>";
+                          <a href='sugerenciaobjetivo5.php?tipo=politica&id=$idPolitica'><img src='img/lapiz.jpg' alt='Editar' style='width: 16px; height: auto;'></a></td>";
                     echo "<td>[Sin medidas]</td>";
                     echo "</tr>";
                 }
@@ -153,14 +152,10 @@ if (mysqli_num_rows($resultResultados) > 0) {
     }
     echo "</table>";
 } else {
-    echo "No se encontraron resultados para este objetivo.";
+    echo "<p>No se encontraron resultados para este objetivo.</p>";
 }
 
 mysqli_close($cn);
 ?>
-
-<br>
-<br>
-
 </body>
 </html>
