@@ -16,7 +16,7 @@ $valor=$r["codigo"];
 
 if ($valor==null) {
 
-   header('location:index.php');
+   header('location:login.php');
 
 }else {
     $_SESSION["usuario"] = $valor;

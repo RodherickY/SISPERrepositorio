@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>SISPER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación Electrónica</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Bienvenidos al Proceso de Validación Electrónica<br>Proyecto Educativo Regional (PER)</h1>
+    <p>El Programa registrará tus comentarios y aportes; y un grupo de especialistas los analizará para incorporarlos en la propuesta.</p>
+    <div class="options">
+      <div class="option">
+        <a href="institucion.php">
+          <img src="img/intitucion.png" alt="Institución Educativa">
+          <p>Haz clic aquí si ingresas como<br><strong>Institución Educativa</strong></p>
+        </a>
+      </div>
+      <div class="option">
+        <a href="persona.php">
+          <img src="img/persona.jpg" alt="Persona Individual">
+          <p>Haz clic aquí si ingresas como<br><strong>Persona Individual</strong></p>
+        </a>
+      </div>
+    </div>
+  </div>
 
+    <div class="login-button">
+      <p>¿Ya tienes una cuenta?</p>
+      <a href="login.php" class="btn-login">Inicia sesión aquí</a>
+    </div>
+  
 
-<center>
-<br>
-<h1>PROCESO DE VALIDACIÓN ELECTRÓNICA PROYECTO EDUCATIVO REGIONAL</h1>
-<br><br>
-
-<form action="p_login.php" method="post">
-
-<fieldset id="grupito">
-    <center>
-            <h3>INICIAR SESIÓN</h3>
-            <input type="text" name="txtusuario" id="txt" autocomplete="off" maxlength="8">
-            <input type="password" name="txtpass" id="pwd" autocomplete="off" maxlength="8">
-            <input type="submit" value="Iniciar Sesion" id="btn">
-
-    </center>
-
-
-</fieldset>
-
-</form>
-
-
-</center>
-    
 </body>
 </html>
