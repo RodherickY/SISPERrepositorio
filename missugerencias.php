@@ -9,7 +9,8 @@ $sql = "SELECT s.*
         FROM SUGERENCIA s 
         INNER JOIN PERSONA p 
         ON s.codigo = p.codigo
-        WHERE p.codigo = '$cod'";
+        WHERE p.codigo = '$cod'
+        AND s.estado = 1";
 
 $query = mysqli_query($cn, $sql);
 ?>

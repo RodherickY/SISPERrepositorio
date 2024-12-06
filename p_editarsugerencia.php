@@ -1,9 +1,6 @@
 <?php
-include("auth.php");
 
 include("conexion.php");
-
-$cod=$_SESSION["usuario"];
 
 $idsugerencia=$_POST["idsugerencia"];
 
