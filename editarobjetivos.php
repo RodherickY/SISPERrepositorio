@@ -95,15 +95,15 @@ mysqli_close($cn);
 <body>
     <div class="container">
         <h2>Editar <?php echo ucfirst($tipo); ?></h2>
+
         <form action="p_editarobjetivo.php" method="POST">
             <label>Ha seleccionado un(a) <?php echo ucfirst($tipo); ?></label>
-            <p><strong>El texto actual es:</strong></p>
-            <p><i><?php echo htmlspecialchars($descripcionActual); ?></i></p>
+            <p><strong>La información actual es:</strong></p>
+            <p><i><?php echo $descripcionActual; ?></i></p>
             
-            <label for="descripcion">Editar:</label>
+            <label for="descripcion">Nueva información:</label>
             <textarea id="descripcion" name="descripcion" rows="4" cols="50"><?php echo htmlspecialchars($descripcionActual); ?></textarea>
-            
-            <!-- Enviar el tipo e ID como campos ocultos -->
+
             <input type="hidden" name="tipo" value="<?php echo $tipo; ?>">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             
@@ -112,6 +112,7 @@ mysqli_close($cn);
                 <button type="button" class="btn-cancel" onclick="window.location.href='objetivo1admin.php';">Cancelar</button>
             </div>
         </form>
+
     </div>
 </body>
 </html>

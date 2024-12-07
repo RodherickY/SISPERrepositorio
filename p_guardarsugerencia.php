@@ -6,7 +6,6 @@ $tipo = $_POST["tipo"];     // Tipo: objetivo, resultado, política o medida
 $id = $_POST["id"];         // ID del elemento seleccionado
 $descripcion = $_POST["comentario"]; // Comentario o sugerencia
 
-// Definir tabla y columna para obtener el contenido del elemento
 switch ($tipo) {
     case 'objetivo':
         $tabla = 'objetivos';
@@ -30,7 +29,6 @@ switch ($tipo) {
         break;
 }
 
-// Consultar contenido del elemento
 $sqlItem = "SELECT $columnaDescripcion FROM $tabla WHERE $columnaId = $id";
 
 $resultItem = mysqli_query($cn, $sqlItem);
@@ -39,7 +37,6 @@ $rowItem = mysqli_fetch_assoc($resultItem);
 
 $item = $rowItem[$columnaDescripcion];
 
-// Insertar la sugerencia en la base de datos
 $sql = "INSERT INTO sugerencia (codigo, tipo, descripcion, item, fecha, estado) 
         VALUES ('$codigo', '$tipo', '$descripcion', '$item', NOW(), 1)";
 
