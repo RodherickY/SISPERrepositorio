@@ -2,7 +2,6 @@
 include("conexion.php");
 include("cabecera.php");
 
-// Consultar las sugerencias con estado = 0
 $sql = "SELECT * FROM sugerencia WHERE estado = 0 ORDER BY fecha ASC";
 $result = mysqli_query($cn, $sql);
 

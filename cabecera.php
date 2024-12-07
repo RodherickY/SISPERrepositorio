@@ -61,8 +61,9 @@ $cod = $_SESSION['usuario'];
                             <a href="comentarioseliminados.php">VER COMENTARIO ELIMINADOS</a>
                         </div>
                     </div>
-                    <a href="busqueda.php">BÚSQUEDA</a>
-                    <a href="cerrarsesion.php">CERRAR SESIÓN</a>
+                    <div><a href="busqueda.php">BÚSQUEDA</a></div>
+                    <div><a href="consolidado.php">CONSOLIDADO</a></div>
+                    <div></div><a href="cerrarsesion.php">CERRAR SESIÓN</a>
                 </nav>
             </div>
         </header>
