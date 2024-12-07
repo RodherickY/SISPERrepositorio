@@ -47,11 +47,11 @@ $cod = $_SESSION['usuario'];
                     <div class="dropdown">
                         <a class="dropbtn">GRÁFICOS ▼</a>
                         <div class="dropdown-content">
-                            <a href="grafico1.php">Cantidad de sugerencias según tipo usuario</a>
-                            <a href="grafico2.php">Cantidad de sugerencias por provincias</a>
-                            <a href="grafico3.php">Cantidad de sugerencias por grupo de edad</a>
-                            <a href="grafico4.php">Gráfico 4</a>
-                            <a href="grafico5.php">Gráfico 5</a>
+                            <a href="graficotipousuario.php">Cantidad de sugerencias según tipo usuario</a>
+                            <a href="graficoprovincia.php">Cantidad de sugerencias por provincias</a>
+                            <a href="graficoedad.php">Cantidad de sugerencias por grupo de edad</a>
+                            <a href="graficotiposugerencia.php">Cantidad de sugerencias según item</a>
+                            <a href="graficoestadosugerencia.php">Cantidad de sugerencias según estado</a>
                         </div>
                     </div>
                     <div class="dropdown">
