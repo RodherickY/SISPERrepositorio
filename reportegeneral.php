@@ -22,12 +22,12 @@ include("cabecera.php");
         <tr align="center">
             <td>
                 <a target="_parent" href="reportegeneralpersona.php">
-                <img src="img/reportegeneralpersona.png" width="190" height="140">
+                <img src="img/reportepersona.png" width="190" height="140">
                 </a>
             </td>
             <td>
                 <a target="_parent" href="reportegeneralinstitucion.php">
-                <img src="img/reportegeneralinstitucion.png" width="192" height="142">
+                <img src="img/reporteinstitucion.png" width="192" height="142">
                 </a>
             </td>
         </tr>
