@@ -54,13 +54,23 @@ $cod = $_SESSION['usuario'];
                             <a href="graficoestadosugerencia.php">Cantidad de sugerencias según estado</a>
                         </div>
                     </div>
+
+                    <div>
+                        <a href="comentarioseliminados.php">VER COMENTARIO ELIMINADOS</a>
+                    </div>
+
                     <div class="dropdown">
-                        <a class="dropbtn">GESTIÓN ▼</a>
+                        <a class="dropbtn">EDITAR OBJETIVOS ▼</a>
                         <div class="dropdown-content">
-                            <a href="editarobjetivos.php">EDITAR OBJETIVOS</a>
-                            <a href="comentarioseliminados.php">VER COMENTARIO ELIMINADOS</a>
+                            <a href="objetivo1admin.php">OBJETIVO 1</a>
+                            <a href="objetivo2admin.php">OBJETIVO 2</a>
+                            <a href="objetivo3admin.php">OBJETIVO 3</a>
+                            <a href="objetivo4admin.php">OBJETIVO 4</a>
+                            <a href="objetivo5admin.php">OBJETIVO 5</a>
+                            <a href="objetivo6admin.php">OBJETIVO 6</a>
                         </div>
                     </div>
+
                     <div><a href="busqueda.php">BÚSQUEDA</a></div>
                     <div><a href="consolidado.php">CONSOLIDADO</a></div>
                     <div></div><a href="cerrarsesion.php">CERRAR SESIÓN</a>
