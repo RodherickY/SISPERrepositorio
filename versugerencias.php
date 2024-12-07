@@ -14,7 +14,8 @@ $codigo = $_GET["codigo"];
         echo "<br><br><table border='1' align='center' cellpadding='7' cellspacing='0' bgcolor='white'>";
         echo "<tr>
                 <th>ID</th>
-                <th>Tipo</th>
+                <th>Indicador</th>
+                <th>Item</th>
                 <th>Descripcion</th>
                 <th>Fecha</th>
               </tr>";
@@ -25,6 +26,7 @@ $codigo = $_GET["codigo"];
             echo "<tr>
                     <td>" . $contador . "</td>
                     <td>{$r['tipo']}</td>
+                    <td>{$r['item']}</td>
                     <td>{$r['descripcion']}</td>
                     <td>{$r['fecha']}</td>
                   </tr>";
