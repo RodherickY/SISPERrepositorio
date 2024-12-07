@@ -34,4 +34,6 @@ $codigo = $_GET["codigo"];
         echo "<br><br><br><center><h3>El usuario con código: $codigo todavía no ha realizado sugerencias.</h3></center>";
     }
 
+    echo "<br><br><center><a href='" . $_SERVER['HTTP_REFERER'] . "' class='btn btn-secondary'>Volver a la página anterior</a></center>";
+
 ?>
