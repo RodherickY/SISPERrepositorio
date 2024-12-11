@@ -8,16 +8,23 @@ $cod = $_SESSION["usuario"];
 $cantidad = 5; // Cantidad de elementos por página
 $limite = isset($_GET["valor"]) ? $_GET["valor"] : 0;
 
-// Consulta para obtener sugerencias relacionadas con la persona o institución
-$sql = "SELECT s.*
-        FROM SUGERENCIA s 
-        INNER JOIN PERSONA p 
-        ON s.codigo = p.codigo
-        WHERE p.codigo = '$cod'
-        AND s.estado = 1
+// Consulta para obtener las sugerencias relacionadas con la persona o institución
+$sql = "SELECT s.* FROM SUGERENCIA s 
+        INNER JOIN PERSONA p ON s.codigo = p.codigo 
+        WHERE p.codigo = '$cod' AND s.estado = 1 
         LIMIT $limite, $cantidad";
 $query = mysqli_query($cn, $sql);
 
+// Consulta para obtener el total de sugerencias
+$sqlTotal = "SELECT COUNT(*) as total FROM SUGERENCIA s 
+             INNER JOIN PERSONA p ON s.codigo = p.codigo 
+             WHERE p.codigo = '$cod' AND s.estado = 1";
+$queryTotal = mysqli_query($cn, $sqlTotal);
+$rowTotal = mysqli_fetch_assoc($queryTotal);
+$totalSugerencias = $rowTotal['total'];
+
+// Calcular el número total de páginas
+$totalPaginas = ceil($totalSugerencias / $cantidad);
 ?>
 
 <br>
@@ -59,10 +66,44 @@ $query = mysqli_query($cn, $sql);
 
 <!-- Paginación -->
 <center>
-    <?php for ($i = 0; $i < 3; $i++) { 
-        $parametro = $i * $cantidad; ?>
-        <a target="_parent" href="missugerencias.php?valor=<?php echo $parametro; ?>">
-            <?php echo $i + 1; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
-    <?php } ?>
+    <?php
+    // Mostrar la paginación solo si hay más de una página
+    if ($totalPaginas > 1) {
+        echo '<div class="pagination">';
+        
+        // Enlace para la primera página
+        if ($limite > 0) {
+            echo '<a class="prev" href="missugerencias.php?valor=0">«</a>';
+        } else {
+            echo '<a class="prev disabled">«</a>';
+        }
+
+        // Mostrar enlaces de paginación numerados con guion entre ellos
+        for ($i = 0; $i < $totalPaginas; $i++) {
+            $parametro = $i * $cantidad;
+
+            if ($parametro == $limite) {
+                echo '<a class="active" href="missugerencias.php?valor=' . $parametro . '">' . ($i + 1) . '</a>';
+            } else {
+                echo '<a href="missugerencias.php?valor=' . $parametro . '">' . ($i + 1) . '</a>';
+            }
+
+            // Agregar el guion entre las páginas, pero no después de la última
+            if ($i < $totalPaginas - 1) {
+                echo ' - ';
+            }
+        }
+
+        // Enlace para la última página
+        if ($limite + $cantidad < $totalSugerencias) {
+            echo '<a class="next" href="missugerencias.php?valor=' . (($totalPaginas - 1) * $cantidad) . '">»</a>';
+        } else {
+            echo '<a class="next disabled">»</a>';
+        }
+
+        echo '</div>';
+    }
+    ?>
 </center>
+
+
