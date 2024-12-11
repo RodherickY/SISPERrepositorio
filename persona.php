@@ -28,15 +28,15 @@
 
       <label for="provincia">5.- Provincia (*):</label>
       <select id="provincia" name="provincia" required>
-        <option value="BARRANCA">BARRANCA</option>
-        <option value="HUARAL">HUARAL</option>
-        <option value="CAÑETE">CAÑETE</option>
-        <option value="HUAURA">HUAURA</option>
-        <OPtion value="OYON">OYON </OPtion>
-        <OPtion value="CAJATAMBO">CAJATAMBO </OPtion>
-        <OPtion value="OYON">YAUYOS</OPtion>
-        <OPtion value="HUAROCHIRI">HUAROCHIRI </OPtion>
-        <OPtion value="CANTA">CANTA</OPtion>
+        <option value="Barranca">Barranca</option>
+        <option value="Huaral">Huaral</option>
+        <option value="Cañete">Cañete</option>
+        <option value="Huaura">Huaura</option>
+        <OPtion value="Oyon">Oyon</OPtion>
+        <OPtion value="Cajatambo">Cajatambo</OPtion>
+        <OPtion value="Yauyos">Yauyos</OPtion>
+        <OPtion value="Huarochiri">Huarochiri</OPtion>
+        <OPtion value="Canta">Canta</OPtion>
       </select>
 
       

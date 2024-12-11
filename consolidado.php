@@ -1,7 +1,7 @@
 <?php
-// Conexión a la base de datos
-include("cabecera.php");
 
+include("cabecera.php");
+// Conexión a la base de datos
 $conexion = new mysqli("localhost", "root", "", "sisper");
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
@@ -16,7 +16,7 @@ $totalSugerenciasInstituciones = 0;
 $totalSugerenciasGeneral = 0;
 
 // Provincias a considerar
-$provincias = ["Barranca", "Cajatambo", "Canta", "Cañete", "Huaral", "Huarochirí", "Huaura", "Oyón", "Yauyos"];
+$provincias = ["Barranca", "Cajatambo", "Canta", "Cañete", "Huaral", "Huarochiri", "Huaura", "Oyon", "Yauyos"];
 
 // Datos por provincia
 $datosPersonas = [];
@@ -29,10 +29,14 @@ foreach ($provincias as $provincia) {
 }
 
 // Consultar datos para personas
-$queryPersonas = "SELECT provincia, COUNT(*) as totalPersonas, SUM(sugerencias) as totalSugerencias 
-                  FROM sugerencia 
-                  WHERE tipo_usuario = 'persona' 
-                  GROUP BY provincia";
+$queryPersonas = "
+    SELECT p.provincia, COUNT(*) AS totalPersonas, COUNT(s.idsugerencia) AS totalSugerencias
+    FROM persona p
+    LEFT JOIN usuario u ON p.codigo = u.codigo
+    LEFT JOIN sugerencia s ON u.codigo = s.codigo
+    WHERE u.tipo_usuario = 2
+    GROUP BY p.provincia";
+
 $resultPersonas = $conexion->query($queryPersonas);
 if ($resultPersonas) {
     while ($row = $resultPersonas->fetch_assoc()) {
@@ -45,10 +49,14 @@ if ($resultPersonas) {
 }
 
 // Consultar datos para instituciones
-$queryInstituciones = "SELECT provincia, COUNT(*) as totalInstituciones, SUM(sugerencias) as totalSugerencias 
-                       FROM sugerencia 
-                       WHERE tipo_usuario = 'institucion' 
-                       GROUP BY provincia";
+$queryInstituciones = "
+    SELECT i.provincia, COUNT(*) AS totalInstituciones, COUNT(s.idsugerencia) AS totalSugerencias
+    FROM institucion i
+    LEFT JOIN usuario u ON i.codigo = u.codigo
+    LEFT JOIN sugerencia s ON u.codigo = s.codigo
+    WHERE u.tipo_usuario = 1
+    GROUP BY i.provincia";
+
 $resultInstituciones = $conexion->query($queryInstituciones);
 if ($resultInstituciones) {
     while ($row = $resultInstituciones->fetch_assoc()) {
@@ -79,12 +87,15 @@ $conexion->close();
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         th, td { border: 1px solid #000; padding: 8px; text-align: center; }
         th { background-color: #4CAF50; color: white; }
-        .header { background-color: #007BFF; color: white; font-weight: bold; text-align: left; padding: 10px; }
+        .header { background-color: orange; color: white; font-weight: bold; text-align: left; padding: 10px; }
     </style>
 </head>
 <body>
+
+    <br>
+
     <div class="header">CONSOLIDADO</div>
-    <table>
+    <table bgcolor="white">
         <tr>
             <th>Total de Personas</th>
             <th>Total de Instituciones</th>
@@ -104,7 +115,7 @@ $conexion->close();
     </table>
 
     <div class="header">CANTIDAD DE PERSONAS POR PROVINCIAS</div>
-    <table>
+    <table bgcolor="white">
         <tr>
             <th>Provincia</th>
             <?php foreach ($provincias as $provincia): ?>
@@ -131,7 +142,7 @@ $conexion->close();
     </table>
 
     <div class="header">CANTIDAD DE INSTITUCIONES POR PROVINCIAS</div>
-    <table>
+    <table bgcolor="white">
         <tr>
             <th>Provincia</th>
             <?php foreach ($provincias as $provincia): ?>
@@ -158,7 +169,7 @@ $conexion->close();
     </table>
 
     <div class="header">CANTIDAD TOTAL POR PROVINCIAS</div>
-    <table>
+    <table bgcolor="white">
         <tr>
             <th>Provincia</th>
             <?php foreach ($provincias as $provincia): ?>
@@ -189,5 +200,8 @@ $conexion->close();
             <td><?= $totalSugGeneralProv ?></td>
         </tr>
     </table>
+
+    <br>
+    
 </body>
 </html>
