@@ -13,11 +13,13 @@ include("cabecera.php");
     <title>Grafico 5</title>
 </head>
 <body>
-    <h2><center>GRAFICO DE SUGERENCIAS POR ESTADO DE ELIMINADO O ACTIVO</center></h2>
+    <h2><center>CANTIDAD SUGERENCIAS ELIMINADAS O ACTIVAS</center></h2>
 
     <center>
         <img src="grafico5.php" alt="Gráfico de Estado Sugerencia">
     </center>
+
+    <br>
 
 </body>
 </html>

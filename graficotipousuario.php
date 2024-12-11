@@ -13,11 +13,13 @@ include("cabecera.php");
     <title>Grafico 1</title>
 </head>
 <body>
-    <h2><center>GRAFICO SEGÚN TIPO DE USUARIO</center></h2>
+    <h2><center>CANTIDAD DE SUGERENCIAS SEGÚN TIPO DE USUARIO</center></h2>
 
     <center>
         <img src="grafico1.php" alt="Gráfico según tipo de usuario">
     </center>
+
+    <br>
 
 </body>
 </html>

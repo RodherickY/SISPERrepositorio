@@ -20,15 +20,15 @@
 
       <label for="provincia">3.- Provincia (*):</label>
       <select id="provincia" name="provincia" required>
-        <option value="BARRANCA">BARRANCA</option>
-        <option value="HUARAL">HUARAL</option>
-        <option value="CAÑETE">CAÑETE</option>
-        <option value="HUAURA">HUAURA</option>
-        <OPtion value="OYON">OYON </OPtion>
-        <OPtion value="CAJATAMBO">CAJATAMBO </OPtion>
-        <OPtion value="OYON">YAUYOS</OPtion>
-        <OPtion value="HUAROCHIRI">HUAROCHIRI </OPtion>
-        <OPtion value="CANTA">CANTA</OPtion>
+        <option value="Barranca">Barranca</option>
+        <option value="Huaral">Huaral</option>
+        <option value="Cañete">Cañete</option>
+        <option value="Huaura">Huaura</option>
+        <OPtion value="Oyon">Oyon</OPtion>
+        <OPtion value="Cajatambo">Cajatambo</OPtion>
+        <OPtion value="Yauyos">Yauyos</OPtion>
+        <OPtion value="Huarochiri">Huarochiri</OPtion>
+        <OPtion value="Canta">Canta</OPtion>
       </select>
 
       <label for="director">4.- Director(a) responsable:</label>
@@ -45,6 +45,9 @@
         <label for="nadministrativos">Nro. de Administrativos:</label>
         <input type="number" id="nadministrativos" name="nadministrativos" required>
       </fieldset>
+
+      <label for="contrasena">6.- Contraseña:</label>
+      <input type="text" id="contrasena" name="contrasena" maxlength="8">
 
       <button type="submit">Clic aquí para guardar tus datos</button>
     </form>

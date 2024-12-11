@@ -13,11 +13,13 @@ include("cabecera.php");
     <title>Grafico 2</title>
 </head>
 <body>
-    <h2><center>GRAFICO DE SUGERENCIAS POR PROVINCIA</center></h2>
+    <h2><center>CANTIDAD DE SUGERENCIAS POR PROVINCIA</center></h2>
 
     <center>
         <img src="grafico2.php" alt="Gráfico de Estado Sugerencia">
     </center>
+
+    <br>
 
 </body>
 </html>

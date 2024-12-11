@@ -39,7 +39,8 @@
         <OPtion value="Canta">Canta</OPtion>
       </select>
 
-      
+      <label for="contrasena">6.- Contraseña:</label>
+      <input type="text" id="contrasena" name="contrasena" maxlength="8">
 
       
 

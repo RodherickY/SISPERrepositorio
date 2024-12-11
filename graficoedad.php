@@ -13,7 +13,7 @@ include("cabecera.php");
     <title>Grafico 3</title>
 </head>
 <body>
-    <h2><center>GRAFICO DE SUGERENCIAS POR EDAD</center></h2>
+    <h2><center>CANTIDAD DE SUGERENCIAS POR EDAD</center></h2>
 
     <center>
         <img src="grafico3.php" alt="Gráfico de sugerencias por edad">
