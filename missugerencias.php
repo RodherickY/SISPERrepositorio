@@ -12,10 +12,14 @@ $cantidad = 5; // Cantidad de elementos por página
 $limite = isset($_GET["valor"]) ? $_GET["valor"] : 0;
 
 // Consulta para obtener las sugerencias relacionadas con la persona o institución
-$sql = "SELECT s.* FROM SUGERENCIA s 
-        INNER JOIN PERSONA p ON s.codigo = p.codigo 
-        WHERE p.codigo = '$cod' AND s.estado = 1 
-        LIMIT $limite, $cantidad";
+$sql = "
+    SELECT s.* 
+    FROM SUGERENCIA s
+    LEFT JOIN PERSONA p ON s.codigo = p.codigo
+    LEFT JOIN INSTITUCION i ON s.codigo = i.codigo
+    WHERE (p.codigo = '$cod' OR i.codigo = '$cod') AND s.estado = 1
+    LIMIT $limite, $cantidad";
+
 $query = mysqli_query($cn, $sql);
 
 // Consulta para obtener el total de sugerencias
