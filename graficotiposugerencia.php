@@ -1,7 +1,9 @@
 <?php
 
 include("conexion.php");
-include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 ?>
 
@@ -13,8 +15,10 @@ include("cabecera.php");
     <title>Grafico 4</title>
 </head>
 <body>
+    <br>
     <h2><center>CANTIDAD DE SUGERENCIAS SEGÚN ITEM</center></h2>
 
+    <br>
     <center>
         <img src="grafico4.php" alt="Gráfico de Tipo Sugerencia">
     </center>

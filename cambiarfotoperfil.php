@@ -1,8 +1,7 @@
 <?php
 
-
-include("cabecera.php");
-
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 ?>
 

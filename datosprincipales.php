@@ -1,7 +1,9 @@
 <?php
 
 include("conexion.php");
-include("cabecera.php");
+//include("cabecera.php");
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $cod = $_SESSION["usuario"];
 
@@ -47,7 +49,8 @@ if ($rTipo['tipo_usuario'] == '1') { // Institución
 </center>
 <br>
 
-<table border="1" cellspacing="0" align="center" bgcolor="white" width="600">
+<div class="tabla-contenedor">
+<table border="1" cellspacing="0" align="center" bgcolor="white" width="600" margin="0">
     <?php if ($rTipo['tipo_usuario'] == '1') { // Mostrar datos de institución ?>
         <tr>
             <td rowspan="7" align="center" valign="middle">
@@ -116,6 +119,7 @@ if ($rTipo['tipo_usuario'] == '1') { // Institución
         </tr>
     <?php } ?>
 </table>
+</div>
 
 <br>
 
@@ -126,6 +130,8 @@ if ($r["estado"] == 0) { ?>
         <h1 style="color:black;">ACTUALICE SUS DATOS ESPECÍFICOS</h1>
     </center>
 <?php } else { ?>
+
+    <div class="tabla-contenedor">
     <table align="center" border="1" cellspacing="0" bgcolor="white" width="600">
         <tr>
             <td>CORREO: </td>
@@ -148,6 +154,7 @@ if ($r["estado"] == 0) { ?>
         <?php } ?>
 
     </table>
+    </div>
 <?php } ?>
 
 <br>

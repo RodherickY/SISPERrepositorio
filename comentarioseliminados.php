@@ -1,6 +1,9 @@
 <?php
+//include("cabecera.php");
 include("conexion.php");
-include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $sql = "SELECT * FROM sugerencia WHERE estado = 0 ORDER BY fecha ASC";
 $result = mysqli_query($cn, $sql);

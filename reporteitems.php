@@ -1,6 +1,9 @@
 <?php
+//include("cabecera.php");
 include("conexion.php");
-include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $filtroItem = isset($_POST['filtro_item']) ? $_POST['filtro_item'] : '';
 

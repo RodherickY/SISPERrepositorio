@@ -1,7 +1,9 @@
 <?php
 
 include("conexion.php");
-include("cabecera.php");
+//include("cabecera.php");
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $cod = $_SESSION["usuario"];
 
@@ -40,7 +42,8 @@ $r = mysqli_fetch_assoc($f);
 <br>
 
 <form action="p_actualizar.php" method="post">
-<table align="center" border="1" cellspacing="0" bgcolor="lightblue" width="600">
+<div class="tabla-contenedor">
+<table align="center" border="1" cellspacing="0" bgcolor="white" width="600">
     <tr>
         <td>CORREO:</td>
         <td colspan="2">
@@ -73,6 +76,7 @@ $r = mysqli_fetch_assoc($f);
     </tr>
     <?php } ?>
 </table>
+</div>
 <br>
 <center>
     <input type="submit" value="Actualizar Datos">

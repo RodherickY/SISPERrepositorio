@@ -1,8 +1,10 @@
 <?php
 
+//include("cabecera.php");
 include("conexion.php");
-include("cabecera.php");
 
+include("cabeceraLogo.php");
+include("barralateral.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +18,8 @@ include("cabecera.php");
 <center>
     <table border="0" cellspacing="0" cellpadding="9">
         <tr align="center">
-            <td bgcolor="white">REPORTE GENERAL POR PERSONA</td>
-            <td bgcolor="white">REPORTE GENERAL POR INSTITUCION</td>
+            <td bgcolor="">REPORTE GENERAL POR PERSONA   </td>
+            <td bgcolor="">   REPORTE GENERAL POR INSTITUCION</td>
         </tr>
         <tr align="center">
             <td>

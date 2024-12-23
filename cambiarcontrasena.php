@@ -1,7 +1,10 @@
 <?php
 
 //include("auth.php");
-include("cabecera.php");
+//include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 
 ?>
@@ -24,8 +27,8 @@ include("cabecera.php");
 
 <form action="p_cambiarcontrasena.php" method="post">
 
-
-<table border="1" cellspacing="0" bgcolor="lightblue" align="center" width="600">
+<div class="tabla-contenedor">
+<table border="1" cellspacing="0" bgcolor="white" align="center" width="600">
     <tr>
         <td>Ingresar nueva contraseña</td>
         <td><input type="password" name="txtpass" maxlength="8"></td>
@@ -41,7 +44,7 @@ include("cabecera.php");
         
     </tr>
 </table>
-
+</div>
 
 
 </form>

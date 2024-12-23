@@ -1,7 +1,10 @@
 <?php
 
+//include("cabecera.php");
 include("conexion.php");
-include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +16,8 @@ include("cabecera.php");
 </head>
 <body>
 <br><br><br>
-<table align="center" border="0" cellpadding="7" cellspacing="0" bgcolor="white">
+<div class="tabla-contenedor">
+<table align="center" border="1" cellpadding="7" cellspacing="0" bgcolor="white" width="775" style='margin: auto;'>
     <tr align="center">
         <td>FOTO</td>
         <td>NOMBRE</td>
@@ -84,6 +88,7 @@ while ($r=mysqli_fetch_assoc($fila)) {
 
 
 </table>   
+</div>
 
 <br><br>
 

@@ -1,6 +1,9 @@
 <?php
+//include("cabecera.php");
 include("conexion.php");
-include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $cod = $_SESSION["usuario"];
 
@@ -32,6 +35,7 @@ $totalPaginas = ceil($totalSugerencias / $cantidad);
 <br>
 <div>
     <center>
+    <div class="tabla-contenedor">
         <table border="1" cellspacing="0" align="center" bgcolor="white" width="1000">
             <tr>
                 <th>APORTE</th>
@@ -59,6 +63,7 @@ $totalPaginas = ceil($totalSugerencias / $cantidad);
                 </tr>
             <?php } ?>
         </table>
+    </div>
     </center>
 </div>
 

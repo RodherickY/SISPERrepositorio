@@ -1,6 +1,8 @@
 <?php
 
-include("cabecera.php");
+include("cabeceraLogo.php");
+include("barralateral.php");
+
 // Conexión a la base de datos
 $conexion = new mysqli("localhost", "root", "", "sisper");
 if ($conexion->connect_error) {
@@ -94,7 +96,7 @@ $conexion->close();
 
     <br>
 
-    <div class="header">CONSOLIDADO</div>
+    <div class="header" align="center">CONSOLIDADO</div>
     <table bgcolor="white">
         <tr>
             <th>Total de Personas</th>

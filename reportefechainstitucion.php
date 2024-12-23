@@ -1,6 +1,9 @@
 <?php
-include('conexion.php');
-include('cabecera.php');
+//include("cabecera.php");
+include("conexion.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $fechaInit = isset($_POST['f_inicio']) ? date("Y-m-d", strtotime($_POST['f_inicio'])) : null;
 $fechaFin = isset($_POST['f_fin']) ? date("Y-m-d", strtotime($_POST['f_fin'])) : null;

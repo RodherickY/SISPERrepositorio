@@ -1,8 +1,10 @@
 <?php
 
+//include("cabecera.php");
 include("conexion.php");
-include("cabecera.php");
 
+include("cabeceraLogo.php");
+include("barralateral.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

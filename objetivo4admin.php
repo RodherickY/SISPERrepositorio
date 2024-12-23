@@ -1,7 +1,10 @@
 <?php
 
-include("cabecera.php");
+//include("cabecera.php");
 include("conexion.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
 
 $idObjetivo = 4; // ID del objetivo fijo para este archivo
 
@@ -40,14 +43,18 @@ if (!$resultResultados) {
     </center>
     <br>
     <center>
-        <h4>OBJETIVO N° 04</h4>
-        <h4><?php echo $descripcionObjetivo; ?></h4>
+        <h4>OBJETIVO N° 4</h4>
+        <div class="tabla-contenedor">
+        <table border="0" cellspacing="0" align="center" width="800">
+            <td><?php echo $descripcionObjetivo;?></td>
+        </table>
+        </div>
     </center>
     <br>
 
 <?php
 if (mysqli_num_rows($resultResultados) > 0) {
-    echo "<table border='1' cellpadding='5' cellspacing='0' bgcolor='white'>";
+    echo "<table border='1' style='border-collapse: collapse; width: 85%; margin: auto; font-size: 12px;'>";
     echo "<tr>
             <th>Objetivo</th>
             <th>Resultados</th>

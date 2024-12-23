@@ -1,7 +1,10 @@
 <?php
 
 include("conexion.php");
-include("cabecera.php");
+
+include("cabeceraLogo.php");
+include("barralateral.php");
+
 
 ?>
 
@@ -13,8 +16,10 @@ include("cabecera.php");
     <title>Grafico 2</title>
 </head>
 <body>
+    <br>
     <h2><center>CANTIDAD DE SUGERENCIAS POR PROVINCIA</center></h2>
 
+    <br>
     <center>
         <img src="grafico2.php" alt="Gráfico de Estado Sugerencia">
     </center>
